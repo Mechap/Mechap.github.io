@@ -86,9 +86,6 @@
                 élément avec un autre.
             </p>
 
-            <br><br>
-            <div class="divider"></div>
-
             <p>
                 En accord avec l'équivalence type/proposition, la proposition stipulant que pour n'importe quels élémets
                 $a, b:A$ dans un context $\Gamma$ soit égaux est également un type.
@@ -102,12 +99,39 @@
             <div class="divider"></div>
             <br><br>
 
-            En considérant que une section $b$ d'une famille $B$ indexée sur $A$ dans le contexte $\Gamma$, c'est à dire en considérant 
-            \[ \Gamma,\ x:A \vdash b(x) : B(x) \]
+            <div class="columns">
+                <p>
+                    En considérant que une section $b$ d'une famille $B$ indexée sur $A$ dans le contexte $\Gamma$, c'est à dire en considérant 
+                    \[ \Gamma,\ x:A \vdash b(x) : B(x) \]
 
-            D'une certaine manière, une telle section $b$ peut-être vue comme un operateur d'assignement $x \mapsto b(x)$ ou un programme
-            prenant en entrée $x:A$ et retourne un terme $b(x): B(x)$ où le type $B(x)$ dépend de l'argument 
+                    D'une certaine manière, une telle section $b$ peut-être vue comme un operateur d'assignement $x \mapsto b(x)$ ou un programme
+                    prenant en entrée $x:A$ et retourne un terme $b(x): B(x)$ où le type $B(x)$ dépend de l'argument $x:A$.
+                </p>
 
+                <br><br>
+
+                <p>
+                    Le type des toutes les fonctions dépendantes est appelé le type de fonction dépendantes 
+                    \[ \frac{\Gamma,\ x:A \vdash B(x)\ type}{\Gamma \vdash \displaystyle \prod_{x:A} B(x)} \]
+
+                    Le principe de récursion d'un type $A$ est une fonction dépendante retournant une fonciton prenant en paramètre un élément $x:A$.
+                    Le principe de récursion pour le type $\mathrm{Id}_{A}$ permet ainsi de démontrer l'indiscernabilité des identités.
+
+                    \[ \frac{\Gamma,\ x:A \vdash C(x)\ type}{\Gamma \vdash \displaystyle \prod_{x,y:A} \prod_{p:x=_{A}y} C(x) \rightarrow C(y)} \]
+                </p>
+
+                <p>
+                    Cela nous indique que pour n'importe quelle famille de type $C$ repectant une égalité, dans le sens oû appliquer $C$ à des éléments 
+                    égaux de $A$ résultent églement en une fonction entre les types résultants. De manière générale, la fonction $f(x,y,p) : C(x) \rightarrow C(y$
+                    est toujours une equivalence de types et dans l'interpretation univalente une équivalence homotopique.
+                </p>
+            </div>
+
+            <br><br>
+
+            De la même manière, nous pouvons généraliser le principe de récursion pour les fonctions dépendantes : c'est le principe d'induction qui dans le cas
+            du type $\mathrm{Id}_A$ peut être vu comme le fait d'asserter que la famille de $\mathrm{Id}_A$ peut être générée librement par les 
+            éléments de la forme $refl_x : x=x$
         </article>
     </div>
 </body>

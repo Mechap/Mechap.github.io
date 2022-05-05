@@ -25,7 +25,7 @@ s elect {
     background: rgba(255,255,255,0.1);
     border: none;
     font-size: 16px;
-    height: auto;
+    height: 50px;
     width: 100%;
     background-color: #e8eeef;
     color: #8a97a0;
@@ -47,15 +47,27 @@ select {
 button {
     padding: 19px 39px 18px 39px;
     color: #FFF;
-    background-color: #b8bb26;
-    font-size: 18px;
+    font-size: 30px;
     text-align: center;
     font-style: normal;
-    border-radius: 5px;
+    border-radius: 50px;
     width: 100%;
     border: none;
     box-shadow: none;
     margin-bottom: 10px;
+
+    transition: all 0.2s ease-in-out;
+    transform: scale(1);
+    background-color: #282828;
+}
+
+button:hover {
+    background-color: #1d2021;
+    border-radius: 20px;
+}
+
+button:active {
+    transform: scale(0.9);
 }
 
 .result-container {
