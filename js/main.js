@@ -15,11 +15,13 @@ window.addEventListener("scroll", (event) => {
         document.querySelector('.header-banner').classList.remove('scaled-img');
     }
 
+    /*
     if (distanceScrolled >= 80) {
-        document.querySelector('.header-banner').style.filter = 'blur(3px)';
+        document.querySelector('.header-banner').style.filter = 'blur(10px)';
         console.log("fuck");
     } else {
         console.log("ok");
         document.querySelector('.header-banner').style.filter = 'none';
     }
+    */
 });

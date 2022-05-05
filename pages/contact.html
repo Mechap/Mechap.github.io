@@ -8,6 +8,7 @@
     <title>Contacts</title>
 
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/contact.css">
 
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -18,7 +19,9 @@
         });
     </script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
 </head>
 <body>
     <header>
@@ -36,31 +39,41 @@
         </nav>
     </header>
 
-    <form action="" method="get" class="form-example">
-        <div class="form-example">
-            <label for="lname">Entrer votre nom ?</label>
-            <input type="text" name="lname" id="lname">
-        </div>
-        <div class="form-example">
-            <label for="fname">Entrer votre prenom ?</label>
-            <input type="text" name="fname" id="fname">
-        </div>
-        <div class="form-example">
-            <label for="phone_number">Entrer votre numero de telephone ?</label>
-            <input type="tel" name="phone_number" id="phone_number">
-        </div>
-        <div class="form-example">
-            <label for="email_address">Entrer votre asresse email ?</label>
-            <input type="email" name="email_address" id="email_address">
-        </div>
-        <div class="form-example">
-            <label for="birth_date">Entrer votre date de naissance ?</label>
-            <input type="email" name="birth_date" id="birth_date">
-        </div>
-        <div class="form-example">
-            <label for="password">Entrer votre mot de passe ?</label>
-            <input type="password" name="password" id="password">
-        </div>
+    <form method="post" id="signup">
+            <label for="lname">Nom</label>
+            <input type="text" name="lname" id="lname" placeholder="Entrez votre nom">
+            <small></small>
+
+            <label for="fname">Prénom</label>
+            <input type="text" name="fname" id="fname" placeholder="Entrez votre prénom">
+            <small></small>
+
+            <label for="phone_number">Numéro de téléphonne</label>
+            <input type="tel" name="phone_number" id="phone_number" placeholder="Entez votre numéro de téléphonne">
+            <small></small>
+
+            <label for="email_address">Addresse mail</label>
+            <input type="email" name="email_address" id="email_address" placeholder="Entrez votre addresse mail">
+            <small></small>
+
+            <label for="birth_date">Date de naissance</label>
+            <input type="email" name="birth_date" id="birth_date" placeholder="Entrez votre date de naissance">
+            <small></small>
+
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe">
+            <small></small>
+
+            <button type="button" onclick="printAnswers()">Envoyer</button>
     </form>
+
+    <div class="result-container">
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+    </div>
 </body>
 </html>
