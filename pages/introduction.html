@@ -5,12 +5,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Théorie des types homotopiques : Introduction</title>
 
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../css/index.css">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              processEscapes: true
+            }
+        });
+    </script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <script src="../js/main.js"></script>
 </head>
 <body>
+    <header>
+        <div class="header-banner">
+            <h1> La logique est l'anatomie de la pensée </h1>
+        </div>
 
+        <div class="clear"></div>
+        <nav>
+            <div class="site-title">Théorie des types homotopiques</div>
+            <ul>
+                <li><a href="./introduction.html">Introduction</a></li>
+                <li><a href="./contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <article>
+            <div class="columns">
+                <p>
+                    De manière générale, une <strong>théorie</strong> ayant pour but d'être une fondation des mathématiques est construite 
+                    sur <strong>deux couches</strong> :
+                    <ul>
+                        <li> La théorie logique dans laquelle nous pouvons écrire des <strong>propositions</strong>.</li>
+                        <br><br>
+                        <li>La théorie dans laquelle est exprimée notre <strong>axiomatique</strong>.</li>
+                    </ul>
+
+                    Cependant, la théorie des types est unique en son genre puisqu'elle constitue son <strong>propre système
+                    déductif</strong>. Un type correspond ainsi à la fois à une <strong>proposition</strong> et  à une <strong>construction algébrique</strong>.
+
+                    <br><br>
+
+                    De manière générale, la théorie des types peut être considérée comme un système d'inférences qui
+                    peut être combiné pour déduire des propositions.
+
+                    \[ \frac{\mathcal{J}_1 \hspace{10pt} \mathcal{J}_2 \hspace{10pt} \dots \hspace{10pt} \mathcal{J}_n}{C} \]
+
+                    Les règles d'inférences contiennent :
+                    <ul>
+                        <li>au-dessus de la séparation une liste finie
+                        $\mathcal{J}_1,\ \mathcal{J}_2,\ \dots,\ \mathcal{J}_n$ de jugements qui correspondent aux prémices
+                        de notre argument.</li><br><br>
+                        <li>en-dessous de la séparation, un seul jugement $C$ correspondant à notre conclusion.</li>
+                    </ul>
+
+                    <div class="divider"></div>
+                    <br><br>
+
+                    Un exemple trivial de règle d'inférence est celle stipulant que dans n'importe quel context $\Gamma$
+                    nous pouvons utiliser un élément $a:A$ et une fonction $f : A \rightarrow B$ pour obtenir un élément 
+                    $f(a) : B$.
+
+                    \[ \frac{\Gamma \vdash a:A \hspace{10pt} \Gamma \vdash f : A \rightarrow B}{\Gamma \vdash f(a) : B} \]
+                </p>
+            </div>
+
+            <br><br>
+
+            <p>
+                La notion d'<strong>égalité</strong> est également différente puisqu'elle suppose l'existence d'une égalité <strong>propositionnelle</strong>
+                $=$ et <strong>jugementale</strong> $\equiv$. Ainsi, une égalité propositionelle est un type (ou un $\infty$-groupoïde avec
+                l'interpretation homotopique) et ses éléments sont considérés comme des preuves ou des "témoins" de l'identification d'un 
+                élément avec un autre.
+            </p>
+
+            <br><br>
+            <div class="divider"></div>
+
+            <p>
+                En accord avec l'équivalence type/proposition, la proposition stipulant que pour n'importe quels élémets
+                $a, b:A$ dans un context $\Gamma$ soit égaux est également un type.
+
+                \[ \frac{\Gamma \vdash A : \mathcal{U}_i \hspace{10pt} \Gamma \vdash a:A \hspace{10pt} \Gamma \vdash b:B}{\Gamma \vdash a =_{A} b : \mathcal{U}_i} \]
+
+                On introduit ainsi la fonction $\mathrm{refl}$ en tant qu'élément de base du type identité
+                \[ \frac{\Gamma \vdash A : \mathcal{U}_i \hspace{10pt} \Gamma \vdash a:A}{\Gamma \vdash \mathrm{relf}_a : a=_{A} a} \]
+            </p>
+
+            <div class="divider"></div>
+            <br><br>
+
+            En considérant que une section $b$ d'une famille $B$ indexée sur $A$ dans le contexte $\Gamma$, c'est à dire en considérant 
+            \[ \Gamma,\ x:A \vdash b(x) : B(x) \]
+
+            D'une certaine manière, une telle section $b$ peut-être vue comme un operateur d'assignement $x \mapsto b(x)$ ou un programme
+            prenant en entrée $x:A$ et retourne un terme $b(x): B(x)$ où le type $B(x)$ dépend de l'argument 
+
+        </article>
+    </div>
 </body>
 </html>
