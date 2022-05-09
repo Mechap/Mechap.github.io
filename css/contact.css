@@ -1,11 +1,10 @@
-
-form {
+#form-container {
     float: left;
-    max-width: 500px;
+    width: 800px;
     margin: 10px auto;
     padding: 10px 20px;
     background: #f4f7f8;
-    margin-left: 200px;
+    margin-left: 500px;
 
     border-radius: 8px;
 }
@@ -21,7 +20,7 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea,
-s elect {
+select {
     background: rgba(255,255,255,0.1);
     border: none;
     font-size: 16px;
@@ -37,6 +36,11 @@ input[type="radio"],
 input[type="checkbox"] {
     margin: 0 4px 8px 0;
 }
+
+input:invalid {
+    background: rgba(255,0,0,0.1);
+}
+
 
 select {
     padding: 6px;
@@ -70,9 +74,15 @@ button:active {
     transform: scale(0.9);
 }
 
-.result-container {
+small {
+    color: red;
+}
+
+/*
+.result {
     float: left;
 
     padding-top: 35px;
     padding-left: 50px;
 }
+*/
