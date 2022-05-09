@@ -1,10 +1,9 @@
 
 function printAnswers() {
     const form = document.getElementById("signup");
-    const result = document.getElementsByClassName("result");
 
     let print = function(n) {
-        result[n].innerHTML = document.getElementById("signup")[n].value;
+        console.log(document.getElementById("signup")[n].value);
     }
 
     print(0);
