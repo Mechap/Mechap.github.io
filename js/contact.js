@@ -19,7 +19,7 @@ function submitForm() {
         return true;
     }
 
-    let names = ["lname", "fname", "phone_number", "email_address", "birth_date", "password", "password_confirmation", "genre"];
+    let names = ["lname", "fname", "phone_number", "email_address", "birth_date", "password", "password_confirmation", "genre", "country", "conditions"];
     names.forEach(function(name) {
         valid = true;
 
@@ -27,14 +27,16 @@ function submitForm() {
 
         if (name == "password_confirmation") {
             let password = form["password"].value;
-            console.log(password);
-            console.log(element);
 
             if (password != element) {
                 alert("Confirmation du mot de passe incorrecte")
                 valid = false;
             }
-        } else if (name == "") {
+        } else if (name == "conditions") {
+            if (!form[name].checked) {
+                alert("Vous n'avez pas accepte les conditions d'utilisation")
+                valid = false;
+            }
         }
 
         if (valid) {
