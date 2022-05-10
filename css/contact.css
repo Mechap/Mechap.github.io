@@ -37,11 +37,6 @@ input[type="checkbox"] {
     margin: 0 4px 8px 0;
 }
 
-input:invalid {
-    background: rgba(255,0,0,0.1);
-}
-
-
 select {
     padding: 6px;
     height: 32px;

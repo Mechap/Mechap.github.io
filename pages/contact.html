@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/contact.css">
 
-    <link rel="stylesheet" href="build/css/countrySelect.css">
-
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             tex2jax: {
@@ -42,61 +40,40 @@
     </header>
 
     <div id="form-container">
-    <form method="post" id="signup">
+    <form id="signup" onsubmit="submitForm()">
             <label for="lname">Nom</label>
             <input type="text" name="lname" placeholder="Entrez votre nom" required>
-            <small></small>
-
-            <br>
 
             <label for="fname">Prénom</label>
             <input type="text" name="fname" placeholder="Entrez votre prénom" required>
-            <small></small>
-
-            <br>
 
             <label for="phone_number">Numéro de téléphonne</label>
             <input type="tel" name="phone_number" placeholder="Entez votre numéro de téléphonne" required>
-            <small></small>
-
-            <br>
 
             <label for="email_address">Addresse mail</label>
             <input type="email" name="email_address" placeholder="Entrez votre addresse mail" required>
-            <small></small>
-
-            <br>
 
             <label for="birth_date">Date de naissance</label>
             <input type="date" name="birth_date" placeholder="Entrez votre date de naissance" required>
-            <small></small>
-
-            <br>
 
             <label for="password">Mot de passe</label>
             <input type="password" name="password" placeholder="Entrez votre mot de passe" required>
 
-            <br>
-
             <label for="password_confirmation">Confirmation du mot de passe</label>
             <input type="password" name="password_confirmation" placeholder="Entrez de nouveau votre mot de passe" required>
-            <small></small>
-
-            <br>
-
+            
             <input type="radio" id="man" name="genre" value="Homme">
-            <label for="man">Homme</label><br>
+            <label for="man">Homme</label>
 
             <input type="radio" id="woman" name="genre" value="Femme">
-            <label for="woman">Femme</label><br>
+            <label for="woman">Femme</label>
 
             <input type="radio" id="others" name="genre" value="Autres">
             <label for="others">Autres</label>
 
-            <br>
 
             <label for="country">Pays</label>
-            <select id="country" name="country" class="form-control">
+            <select id="country" name="country" class="form-control" required>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -343,7 +320,10 @@
                 <option value="Zimbabwe">Zimbabwe</option>
             </select>
 
-            <button type="button" onclick="printAnswers()">Envoyer</button>
+            <input type="checkbox" name="conditions"></input>
+            <label for="conditions">Conditions d'utilisation</label>
+
+            <button type="submit">Envoyer</button>
     </form>
     </div>
 </body>

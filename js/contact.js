@@ -1,34 +1,69 @@
-function printAnswers() {
+function submitForm() {
     const form = document.getElementById("signup");
-    const form_container = document.getElementById("form-container");
+    const form_container = document.getElementById("form-container")
 
-    const small_names = document.getElementsByTagName("small");
+    valid_answers = true;
 
-    coherent_answers = true;
+    let validateAnswer = function(name) {
+        if (name == "password_confirmation") {
+            let password = form["password"].value;
+            console.log(password);
+            console.log(form[name].value);
+            if (form[name].value == password) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
+        return true;
+    }
+
+    let names = ["lname", "fname", "phone_number", "email_address", "birth_date", "password", "password_confirmation", "genre"];
+    names.forEach(function(name) {
+        valid = true;
+
+        let element = form[name].value;
+
+        if (name == "password_confirmation") {
+            let password = form["password"].value;
+            console.log(password);
+            console.log(element);
+
+            if (password != element) {
+                alert("Confirmation du mot de passe incorrecte")
+                valid = false;
+            }
+        } else if (name == "") {
+        }
+
+        if (valid) {
+            let textElement = document.createElement("p");
+            textElement.innerHTML = element;
+            form_container.appendChild(textElement);
+        } else {
+            valid_answers = false;
+        }
+    })
+
+    if (valid_answers) {
+        form.remove();
+    }
+
+    /*
     let interpret = function(n) {
         if (n == 0) {
             let fname = form[n].value;
             let lname = form[n+1].value;
 
-            if (fname.length > 0 && lname.length > 0) {
-                let textElement = document.createElement("p");
-                textElement.innerHTML = "Bonjour " + fname + " " + lname + " et merci de vous être inscrit."
-                form_container.appendChild(textElement);
-            } else {
-                small_names[n].innerHTML = "Noms ou prénoms non remplis";
-                coherent_answers = false;
-            }
+            let textElement = document.createElement("p");
+            textElement.innerHTML = "Bonjour " + fname + " " + lname + " et merci de vous être inscrit."
+            form_container.appendChild(textElement);
         } else if (n == 2 && coherent_answers) {
             let phone_number = form[n].value;
-            if (phone_number.length > 0) {
-                let textElement = document.createElement("p");
-                textElement.innerHTML = "Votre numéro de téléphone est " + phone_number;
-                form_container.appendChild(textElement);
-            } else {
-                small_names[n].innerHTML = "Numéro de téléphone non rempli";
-                coherent_answers = false;
-            }
+            let textElement = document.createElement("p");
+            textElement.innerHTML = "Votre numéro de téléphone est " + phone_number;
+            form_container.appendChild(textElement);
         } else if (n == 3 && coherent_answers) {
             let email_address = form[n].value;
             let textElement = document.createElement("p");
@@ -47,9 +82,6 @@ function printAnswers() {
                 let textElement = document.createElement("p");
                 textElement.innerHTML = "Votre mot de passe est " + password;
                 form_container.appendChild(textElement);
-            } else {
-                small_names[n].innerHTML = "Confirmation du mot de passe incorrecte";
-                coherent_answers = false;
             }
 
             if (password.length == 0 || password_confirmation.length == 0) {
@@ -60,11 +92,15 @@ function printAnswers() {
             let textElement = document.createElement("p");
             textElement.innerHTML = "Vous êtes un " + form[n].value;
             form_container.appendChild(textElement);
-        } else {
+        } else if (n == 10 && coherent_answers) {
             let country = document.getElementById("country");
             let textElement = document.createElement("p");
             textElement.innerHTML = "Vous habitez " + country.options[country.selectedIndex].value;
             form_container.appendChild(textElement);
+        } else if (n == 11 && coherent_answers) {
+            if (!form[n].checked) {
+                coherent_answers = false;
+            }
         }
     }
 
@@ -75,8 +111,14 @@ function printAnswers() {
     interpret(4);
     interpret(5);
     interpret(6);
+    interpret(7);
+    interpret(8);
+    interpret(9);
+    interpret(10);
 
-    if (coherent_answers == true) {
+    console.log(coherent_answers);
+    if (coherent_answers) {
         form.remove();
     }
+    */
 }
