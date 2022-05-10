@@ -4,21 +4,6 @@ function submitForm() {
 
     valid_answers = true;
 
-    let validateAnswer = function(name) {
-        if (name == "password_confirmation") {
-            let password = form["password"].value;
-            console.log(password);
-            console.log(form[name].value);
-            if (form[name].value == password) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     let names = ["lname", "fname", "phone_number", "email_address", "birth_date", "password", "password_confirmation", "genre", "country", "conditions"];
     names.forEach(function(name) {
         valid = true;
@@ -41,7 +26,36 @@ function submitForm() {
 
         if (valid) {
             let textElement = document.createElement("p");
-            textElement.innerHTML = element;
+            switch (name) {
+                case "lname":
+                    let fname = form["fname"].value;
+                    textElement.innerHTML = "Bonjour " + element + " " + fname + ".";
+                    break;
+
+                case "phone_number":
+                    textElement.innerHTML = "Votre numero de telephonne est " + element;
+                    break
+
+                case "email_address":
+                    textElement.innerHTML = "Votre addresse email est " + element;
+                    break;
+                
+                case "birth_date":
+                    textElement.innerHTML = "Votre date de naissance est " + element;
+                    break
+
+                case "password":
+                    textElement.innerHTML = "Votre mot de passe est " + element;
+                    break;
+
+                case "genre":
+                    textElement.innerHTML = "Vous etes " + element;
+                    break;
+
+                case "country":
+                    textElement.innerHTML = "Vous vivez en " + element;
+                    break;
+            }
             form_container.appendChild(textElement);
         } else {
             valid_answers = false;
